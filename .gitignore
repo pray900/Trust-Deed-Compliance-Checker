@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# IDE / OS
+.vscode/
+.idea/
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Hugging Face model cache (if redirected into the project)
+.cache/
+hf_cache/
+
+# Generated output
+compliance_report.pdf
+
+# Input documents: may contain personal or confidential information
+*.pdf
+*.docx
+
+# Personal notes, not part of the repo
+GIT_WORKFLOW.md
