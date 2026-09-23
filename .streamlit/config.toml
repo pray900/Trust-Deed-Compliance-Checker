@@ -1,0 +1,4 @@
+[server]
+# 8501 (Streamlit's default) falls inside a Windows reserved port range
+# on some machines (Hyper-V/WSL), which causes WinError 10013.
+port = 8900
