@@ -34,9 +34,7 @@ Regulations (text) ────────────────────�
 ├── matcher.py          # Cosine-similarity matching and status thresholds
 ├── report.py           # PDF report export (fpdf2)
 ├── statement.txt       # Sample regulation for testing
-├── requirements.txt
-└── .streamlit/
-    └── config.toml     # Server port setting
+└── requirements.txt
 ```
 
 ## Getting started
@@ -57,9 +55,24 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-The app opens at <http://localhost:8900>.
+The app opens at <http://localhost:8501>.
 
-> **Why port 8900?** Streamlit defaults to 8501, which is inside a range Windows reserves for Hyper-V/WSL on some machines. That causes `OSError: [WinError 10013]`. The port is set in `.streamlit/config.toml`; change it there if needed.
+> **Windows note:** if you get `OSError: [WinError 10013]`, port 8501 falls inside a range Windows
+> reserves for Hyper-V/WSL on your machine. Run the app on a free port instead:
+>
+> ```powershell
+> streamlit run app.py --server.port 8900
+> ```
+>
+> Do not put that port in a committed `.streamlit/config.toml`: Streamlit Community Cloud
+> health-checks the app on 8501 and the deployment will fail. Keep it local (the folder is
+> in `.gitignore`) or pass the flag each time.
+
+## Deployment
+
+The app is deployed on [Streamlit Community Cloud](https://streamlit.io/cloud): connect the
+repository, set the main module to `app.py`, and let it install `requirements.txt`. Leave the
+server port unset so the platform can use its default.
 
 ## Usage
 
