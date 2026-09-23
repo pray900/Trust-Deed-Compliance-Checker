@@ -26,3 +26,6 @@ compliance_report.pdf
 
 # Personal notes, not part of the repo
 GIT_WORKFLOW.md
+
+# Local Streamlit settings (machine-specific port, secrets)
+.streamlit/
